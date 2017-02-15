@@ -1,0 +1,13 @@
+<% provide(:title, @coach.full_name) %>
+<div class="clearfix">
+  <h3 class="pull-left"><%= @coach.first_name %>'s updates <span class="badge"><%= @coach_updates.count %></span></h3>
+</div>
+<ul class="coach-updates">
+  <% @coach_updates.each do |update| %>
+    <li>
+      <h4><%= link_to update.client.full_name, client_path(update.client) %>
+      </h4>
+      <small><%= format_date(update.date) %></small>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,11 @@
+  
+<h3><%= @client.full_name %></h3>
+<p><%= @client.age %> years old</p>
+<% if @client.profile_image? %>
+  <%= image_tag @client.profile_image.url, class: 'img-thumbnail img-responsive' %>
+<% else %>
+  <%= image_tag(('client_default_profile.jpg'), class: 'img-thumbnail img-responsive') %>
+<% end %>
+<% if current_user.admin? %>
+  <%= link_to "Edit", edit_client_path(@client) %> | <%= link_to "Delete", @client, method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>

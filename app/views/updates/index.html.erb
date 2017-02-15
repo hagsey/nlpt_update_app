@@ -1,0 +1,7 @@
+<% provide(:title, "All updates") %>
+<div class="row">
+  <h2>All updates <span class="badge"> <%= @updates.count %></span></h2>
+  <ul class="updates">
+    <%= render @updates %>
+  </ul>
+</div>

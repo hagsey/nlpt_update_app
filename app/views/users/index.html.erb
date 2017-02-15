@@ -1,0 +1,31 @@
+<div class="col-md-10 col-md-offset-1">
+  <h2>Coaches</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Updates</th>
+        <% if current_user.admin? %>
+        <th>Last sign-in</th>
+        <th>Total sign-ins</th>
+        <th>Remove</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @coaches.each do |coach| %>
+        <tr>
+          <td><%= link_to coach.full_name, coach_path(coach) %></td>
+          <td><%= coach.email %></td>
+          <td><%= coach.updates.count %></td>
+          <% if current_user.admin? %>
+          <td><%= coach.last_sign_in_at%></td>
+          <td><%= coach.sign_in_count%></td>
+          <td><%= link_to "Delete", admin_destroy_user_path(coach), method: :delete, data: { confirm: 'Are you sure?'} unless coach.admin? %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

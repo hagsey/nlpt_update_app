@@ -1,0 +1,91 @@
+<% provide(:title, "Clients") %>
+<div class="row">
+  <div class="clearfix">
+    <h2 class="pull-left">All clients <span class="badge"><%= @client_count %></span></h2>
+    <h2 class="pull-right"><%= link_to "Add new client", new_client_path, class: "btn btn-success" %></h2>
+  </div>
+
+<!-- REACT IMPLEMENTATION -->
+<!-- REACT IMPLEMENTATION -->
+<!-- REACT IMPLEMENTATION -->
+
+  <%= react_component 'ClientData' %>
+  
+<!-- ANGULAR IMPLEMENTATION -->
+<!-- ANGULAR IMPLEMENTATION -->
+<!-- ANGULAR IMPLEMENTATION -->
+
+<!--   <article ng-app="clients" ng-controller="ClientSearchController">
+    <section class="search-form">
+      <form>
+        <input type="text" autocomplete="off" name="keywords" class="form-control" placeholder="Search it bitch..." ng-change="search(keywords)" ng-model="keywords">
+      </form>
+      <h3 class="searchedFor" ng-if="searchedFor">
+        <small>Searched for: </small> {{searchedFor}}
+      </h3>
+    </section>
+    <section class="search-results">
+      <header>
+        <h3>Results</h3>
+      </header>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="client in clients">
+          <h2>{{client.first_name}} {{client.last_name}}</h2>
+          <p>Updated: {{client.updated_at}}</p>
+        </li>
+      </ul>
+    </section>
+  </article> -->
+
+  <!-- JQUERY IMPLEMENTATION  -->
+  <!-- JQUERY IMPLEMENTATION  -->
+  <!-- JQUERY IMPLEMENTATION  -->
+
+<!--   <input id="client-search-input" autocomplete="off" class="form-control" type="text" />
+
+    <section class="search-results">
+    <table id="clients-table" class="table table-hover clients">
+      <thead>
+        <tr>
+          <td>
+            <h5>Name</h5>
+          </td>
+          <td>
+            <h5>Updates</h5>
+          </td>
+          <td>
+            <h5>Age</h5>
+          </td>
+          <td>
+            <h5>Last updated</h5>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <%# @clients.each do |client| %>
+          <tr id="client-<%#= client.id %>">
+            <td>
+              <p><%#= link_to client.full_name, client_path(client) %>
+              </p>
+            </td>
+            <td>
+              <%# if client.updates.any? %>
+                <p><span class="badge"><%#= client.updates.count%></span></p>
+              <%# end %>
+            </td>
+            <td>
+              <p><%#= client.age %></p>
+            </td>
+            <td>
+              <p class="timestamp">
+                Updated <%#= time_ago_in_words(client.updated_at) %> ago</p>
+            </td>
+          </tr>
+        <%# end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+  <script type="text/javascript">
+    $("#client-search-input").attr("placeholder", "Loading...");
+  </script> -->

@@ -1,0 +1,18 @@
+<tr id="client-<%= client.id %>">
+  <td>
+    <p><%= link_to client.full_name, client_path(client) %>
+    </p>
+  </td>
+  <td>
+    <% if client.updates.any? %>
+      <p><span class="badge"><%= client.updates.count%></span></p>
+    <% end %>
+  </td>
+  <td>
+    <p><%= client.age %></p>
+  </td>
+  <td>
+    <p class="timestamp">
+      Updated <%= time_ago_in_words(client.updated_at) %> ago</p>
+  </td>
+</tr>

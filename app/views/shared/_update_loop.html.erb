@@ -1,0 +1,55 @@
+<div class="update-loop">
+  <% @updates.each do |update| %>
+    <div class="jumbotron">
+      <div class="update-loop-title">
+        <h2 class="name"><%= update.client.full_name %></h2>
+        <h3 class="date"><%= format_date(update.date) %></h3>
+        <h4 class="coach"><em>Updated by: <%= update.coach_name %></em></h4>
+      </div>
+      <% unless update.general_description.blank? %>
+        <div class="panel panel-info">
+          <div class="panel-heading"><span class="glyphicon glyphicon-user"></span>General description</div>
+          <div class="panel-body">
+            <%= simple_format(update.general_description) %>
+            <p><%#= update.general_description %></p>
+          </div>
+        </div>
+      <% end %>
+      <% unless update.health_status.blank? %>
+        <div class="panel panel-success">
+          <div class="panel-heading"><span class="glyphicon glyphicon-plus"></span>Health informaion</div>
+          <div class="panel-body">
+            <%= simple_format(update.health_status) %>
+          </div>
+        </div>
+      <% end %>
+      <% unless update.movement_limitations.blank? %>
+        <div class="panel panel-danger">
+          <div class="panel-heading"><span class="glyphicon glyphicon-ban-circle"></span>Movement limitations</div>
+          <div class="panel-body">
+            <%= simple_format(update.movement_limitations) %>
+          </div>
+        </div>
+      <% end %>
+      <% unless update.goals.blank? %>
+        <div class="panel panel-orange">
+          <div class="panel-heading"><span class="glyphicon glyphicon-signal"></span>Training goals</div>
+          <div class="panel-body">
+            <%= simple_format(update.goals) %>
+          </div>
+        </div>
+      <% end %>
+      <% unless update.comment.blank? %>
+        <div class="panel panel-warning">
+          <div class="panel-heading"><span class="glyphicon glyphicon-info-sign"></span>General comments</div>
+          <div class="panel-body">
+            <%= simple_format(update.comment) %>
+          </div>
+        </div>
+      <% end %>
+      <% if current_user_or_admin?(update.coach) %>
+        <%= link_to "Edit", edit_client_update_path(update.client, update) %> | <%= link_to "Delete", [update.client, update], method: :delete, data: {confirm: "Are you sure?"} %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

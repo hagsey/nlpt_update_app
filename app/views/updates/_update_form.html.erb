@@ -1,0 +1,16 @@
+<%= form_for([@client, @update]) do |f| %>
+  <%= f.label :date %>
+  <%= f.date_field :date, class: 'form-control', id: 'update-form-date', required: true %>
+  <p><em>All fields are optional. Leave blank if any don't apply to this update.</em></p>
+  <%= f.label :general_description %>
+  <%= f.text_area :general_description, size: "24x6", class: 'form-control', placeholder: 'Write a few sentences about the client. May include background, training history, or any other relevant info.' %>
+  <%= f.label :health_status, 'Health information' %>
+  <%= f.text_area :health_status, size: "24x6", class: 'form-control', placeholder: 'Discuss relevant health or injury information. ' %>
+  <%= f.label :movement_limitations %>
+  <%= f.text_area :movement_limitations, size: "24x6", class: 'form-control', placeholder: 'What exercises or movements should the client avoid? Be as specific as possible.' %>
+  <%= f.label :goals, 'Training goals' %>
+  <%= f.text_area :goals, size: "24x6", class: 'form-control', placeholder: 'What specific goals does the client have?' %>
+  <%= f.label :comment, 'Other comments' %>
+  <%= f.text_area :comment, size: "24x6", class: 'form-control', placeholder: 'Is there any other information you would like to add?' %>
+  <%= f.button "Update", class: "btn btn-primary" %>
+<% end %>
