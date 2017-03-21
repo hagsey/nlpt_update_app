@@ -1,0 +1,6 @@
+<%= form_for(@comment) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.text_area :body, size: "24x6", class: 'form-control', required: true, placeholder: 'Add comment' %>
+  <%= f.hidden_field :post_id, @post.id %>
+  <%= f.button "Add", class: "btn btn-primary" %>
+<% end %>

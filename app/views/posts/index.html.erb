@@ -1,0 +1,16 @@
+<% provide(:title, "Posts") %>
+  <div class="clearfix">
+    <h2 class="pull-left">Posts</h2>
+    <h2 class="pull-right"><%= link_to "Add new post", new_post_path, class: "btn btn-success" %></h2>
+  </div>
+      <% @posts.each do |post| %>
+          <h3><%= link_to post.title, post_path(post) %></h3>
+          <h5 class="text-muted"><%= format_date(post.created_at) %></h5>
+          <p><%= preview(post.body, 45) %></p>
+          <p><small>By <%= post.author %></small> | 
+          <small>0 Comments</small></p>
+          <hr>
+      <% end %>
+    </tbody>
+  </table>
+

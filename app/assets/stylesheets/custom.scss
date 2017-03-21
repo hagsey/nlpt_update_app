@@ -1,5 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import 'forms';
 @import 'buttons';
 @import 'flash_and_debug_messages';
@@ -11,7 +13,7 @@ GENERAL
 */
 
 body {
-  margin-top: 3em;
+  // margin-top: 3em;
 }
 
 .center {
@@ -42,6 +44,19 @@ HOME PAGE
   }
 }
 
+.fa.fa-quote-left {
+  margin-right: 0.5em;
+}
+
+.recent-column {
+
+  height: 400px;
+  overflow-y: scroll;
+  border: 1px solid #dadada;
+  padding: 10px;
+  box-shadow: inset 0px 0px 7px #dadada;
+  border-radius: 4px;
+}
 
 /*
 ==================
@@ -91,7 +106,7 @@ NAVBAR
 */
 
 .navbar-wrapper {
-  position: fixed;
+  // position: fixed;
   width: 100%;
   top: 0;
   z-index: 999;
@@ -134,7 +149,9 @@ ul.client-search-ul {
     width: 50px;
   }
 }
-
+.account-nav {
+  z-index: -1;
+}
 
 /*
 ==================

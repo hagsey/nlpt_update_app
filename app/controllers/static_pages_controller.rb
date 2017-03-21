@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
   end
   
   def home
-    @updates = Update.order("created_at").limit(10)
+    @posts = Post.order("created_at").limit(15)
+    @updates = Update.order("created_at").limit(15)
+    @comments = Comment.order("created_at DESC").limit(15)
   end
 end

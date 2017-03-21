@@ -1,7 +1,7 @@
 <header class="navbar navbar-static-top navbar-inverse">
   <div class="container">
     <nav>
-        <%= link_to image_tag('nlpt-logo.png'), root_url, :class => 'header-logo navbar-left' %>
+      <%= link_to image_tag('nlpt-logo.png'), root_url, :class => 'header-logo navbar-left' %>
       <% if signed_in? %>
         <form class="navbar-form navbar-left" role="search">
           <%= react_component 'ClientSearchBar' %>
@@ -9,9 +9,6 @@
       <% end %>
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
-          <li><%= link_to "Clients", clients_path %></li>
-          <li><%= link_to "Coaches", coaches_path %></li>
-          <li><%= link_to "Updates", updates_path %></li>
           <li class="dropdown active">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <%= current_user.first_name %>
@@ -33,3 +30,15 @@
     </nav>
   </div>
 </header>
+<% if signed_in? %>
+  <nav class="account-nav navbar navbar-default navbar-static-top">
+    <div class="container">
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Clients", clients_path %></li>
+      <li><%= link_to "Coaches", coaches_path %></li>
+      <li><%= link_to "Posts", posts_path %></li>
+      <li><%= link_to "Updates", updates_path %></li>
+    </ul>
+    </div>
+  </nav>
+<% end %>

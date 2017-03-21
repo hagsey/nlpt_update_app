@@ -1,0 +1,7 @@
+<%= form_for(@post) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.text_field :title, class: 'form-control', required: true, placeholder: 'Title' %>
+  <%= f.text_area :body, size: "24x30", class: 'form-control', required: true %>
+  <%= f.button "Post", class: "btn btn-primary" %>
+<% end %>

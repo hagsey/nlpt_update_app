@@ -5,6 +5,8 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable
 
   has_many :updates
+  has_many :posts
+  has_many :comments
   default_scope -> { order(first_name: :asc) }
 
   before_save :downcase_email
