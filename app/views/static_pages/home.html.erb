@@ -1,43 +1,58 @@
 <div class="home-page">
-  <h1 class="text-center">Recent activity</h1>
-  <div class="col-sm-4">
-    <div>
-      <h1 class="text-muted text-center"><span class="glyphicon glyphicon-signal"></span></h1>
+  <div class="row site-links">
+    <div class="text-center col-xs-3">
+      <h4 class="site-link"><%= link_to "Clients", clients_path %></h4>
     </div>
-    <h4 class="text-muted text-center">Client updates</h4>
-    <div class="recent-column">
-      <% @updates.each do |update| %>
-        <h4><%= link_to update.client.full_name, client_path(update.client) %></h4>
-        <small><%= format_date(update.date) %></small>
-        <hr>
-      <% end %>
+    <div class="text-center col-xs-3">
+      <h4 class="site-link"><%= link_to "Coaches", coaches_path %></h4>
+    </div>
+    <div class="text-center col-xs-3">
+      <h4 class="site-link"><%= link_to "Posts", posts_path %></h4>
+    </div>
+    <div class="text-center col-xs-3">
+      <h4 class="site-link"><%= link_to "Updates", updates_path %></h4>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div>
-      <h1 class="text-muted text-center"><span class="glyphicon glyphicon-pencil"></span></h1>
+  <hr>
+    <h4 class="text-center">Recent activity</h4>
+    <div class="col-sm-4">
+      <div>
+        <h1 class="text-muted text-center"><span class="glyphicon glyphicon-signal"></span></h1>
+      </div>
+      <h4 class="text-muted text-center">Client updates</h4>
+      <div class="recent-column">
+        <% @updates.each do |update| %>
+          <h4><%= link_to update.client.full_name, client_path(update.client) %></h4>
+          <small><%= format_date(update.date) %></small>
+          <hr>
+        <% end %>
+      </div>
     </div>
-    <h4 class="text-muted text-center">Staff posts</h4>
-    <div class="recent-column">
-      <% @posts.each do |post| %>
-        <h4><%= link_to post.title, post_path(post) %></h4>
-        <small>By <%= post.author %></small> | 
+    <div class="col-sm-4">
+      <div>
+        <h1 class="text-muted text-center"><span class="glyphicon glyphicon-pencil"></span></h1>
+      </div>
+      <h4 class="text-muted text-center">Staff posts</h4>
+      <div class="recent-column">
+        <% @posts.each do |post| %>
+          <h4><%= link_to post.title, post_path(post) %></h4>
+          <small>By <%= post.author %></small> | 
       <small><%= format_date(post.created_at) %></small>
-        <hr>
-      <% end %>
+          <hr>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div>
+        <h1 class="text-muted text-center"><span class="glyphicon glyphicon-comment"></span></h1>
+      </div>
+      <h4 class="text-muted text-center">Comments</h4>
+      <div class="recent-column">
+        <% @comments.each do |comment| %>
+          <p><i class="fa fa-lg fa-quote-left text-muted" aria-hidden="true"></i><%= preview(comment.body, 15) %></p>
+          <p><small><%= time_ago_in_words(comment.created_at) %> ago by <%= comment.author %> on <%= link_to comment.post.title, post_path(comment.post) %></small></p>
+          <hr>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div>
-      <h1 class="text-muted text-center"><span class="glyphicon glyphicon-comment"></span></h1>
-    </div>
-    <h4 class="text-muted text-center">Comments</h4>
-    <div class="recent-column">
-      <% @comments.each do |comment| %>
-        <p><i class="fa fa-lg fa-quote-left text-muted" aria-hidden="true"></i><%= preview(comment.body, 15) %></p>
-        <p><small><%= time_ago_in_words(comment.created_at) %> ago by <%= comment.author %> on <%= link_to comment.post.title, post_path(comment.post) %></small></p>
-        <hr>
-      <% end %>
-    </div>
-  </div>
-</div>
