@@ -8,7 +8,7 @@
           <h5 class="text-muted"><%= format_date(post.created_at) %></h5>
           <p><%= preview(post.body, 45) %></p>
           <p><small>By <%= post.author %></small> | 
-          <small>0 Comments</small></p>
+          <small><%= post.comments.length %> comments</small></p>
           <hr>
       <% end %>
     </tbody>
