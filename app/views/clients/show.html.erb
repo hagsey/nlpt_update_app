@@ -1,8 +1,8 @@
 <% provide(:title, @client.full_name) %>
-<div class="col-md-3">
+<div class="col-sm-3">
   <%= render 'shared/client_aside' %>
 </div>
-<div class="col-md-9">
+<div class="col-sm-9">
   <div class="clearfix">
     <h3 class="pull-right"><%= link_to "New update", new_client_update_path(@client), class: 'btn btn-success' %></h3> </div>
     <%= render 'shared/update_loop' %>
