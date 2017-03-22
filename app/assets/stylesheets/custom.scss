@@ -66,18 +66,14 @@ HOME PAGE
 
 .site-link a {
       text-shadow: 0 1px 0 #fff;
-    background-image: -webkit-linear-gradient(top, #fff 0, #e0e0e0 100%);
-    background-image: -o-linear-gradient(top, #fff 0, #e0e0e0 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e0e0e0));
-    background-image: linear-gradient(to bottom, #f9f9f9 0, #e0e0e0 100%);
+    background-image: linear-gradient(to bottom, #fff 0, #f1f1f1 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
     background-repeat: repeat-x;
     border: 1px solid gray;
-    color: #747474;
     border-color: #dbdbdb;
     padding: 0.5em 1em;
-    border-color: #e0e0e0;
+    border-color: #e9e9e9;
     border-radius: 2px;
 }
 
