@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-  has_many :updates
+  has_many :updates, dependent: :destroy
 
   before_save :strip_names
 
