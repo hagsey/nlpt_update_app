@@ -24,11 +24,11 @@
       <% @updates.each do |update| %>
         <div class="row">
           <div class="col-xs-3">
-            <% if update.client.profile_image? %>
-              <%= image_tag update.client.profile_image.url, class: 'img-circle img-responsive' %>
-            <% else %>
-              <%= image_tag(('client_default_profile.jpg'), class: 'img-circle img-responsive') %>
-            <% end %>
+            <%# if update.client.profile_image? %>
+              <%#= image_tag update.client.profile_image.url, class: 'img-circle img-responsive' %>
+            <%# else %>
+              <%#= image_tag(('client_default_profile.jpg'), class: 'img-circle img-responsive') %>
+            <%# end %>
           </div>
           <div class="col-xs-9">
             <h4><%= link_to update.client.full_name, client_path(update.client) %></h4>
