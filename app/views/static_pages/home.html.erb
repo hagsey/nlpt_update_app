@@ -48,7 +48,7 @@
       <% @posts.each do |post| %>
         <h4><%= link_to post.title, post_path(post) %></h4>
         <small>By <%= post.author %></small> | 
-      <small><%= format_date(post.created_at) %></small>
+      <small><%= format_date(post.created_at) %> | <%= post.comments.length %> comments</small>
         <hr>
       <% end %>
     </div>
