@@ -1,6 +1,8 @@
+<% if signed_in? %>
 <div class="side-nav text-center">
   <p class="site-link"><%= link_to "Staff blog", posts_path %></p> | 
   <p class="site-link"><%= link_to "Client updates", updates_path %></p> | 
   <p class="site-link"><%= link_to "All clients", clients_path %></p> | 
   <p class="site-link"><%= link_to "Coaches", coaches_path %></p>
 </div>
+<% end %>
