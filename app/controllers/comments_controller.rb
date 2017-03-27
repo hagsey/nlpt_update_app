@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+
+  def new
+  end
+
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
@@ -9,7 +13,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post)
     else
-      render 'new'
+      flash.now[:danger] = "Comment not saved"
+
     end
   end
 

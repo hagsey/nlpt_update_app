@@ -4,5 +4,5 @@ class Comment < ApplicationRecord
   
   # default_scope -> { order(created_at: :desc) }
 
-  validates :body, length: {maximum: 1000}
+  validates :body, length: {maximum: 100_000}
 end
